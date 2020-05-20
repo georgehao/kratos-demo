@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package up.service.v1;
+
+option go_package = "api";
+
+service Up {
+    rpc Ping(.google.protobuf.Empty) returns (.google.protobuf.Empty);
+    rpc CheckRole(CheckUpReq) returns (CheckUpResp);
+}
+
+message CheckUpReq {
+    int32 Role = 1;
+}
+
+message CheckUpResp {
+    bool Yes = 1;
+}

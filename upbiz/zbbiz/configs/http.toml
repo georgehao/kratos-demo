@@ -1,0 +1,14 @@
+[Server]
+    addr = "0.0.0.0:8020"
+    timeout = "1s"
+[Client]
+    dial = "2s"
+    timeout = "100s"
+    keepAlive = "60s"
+    timer = 1000
+    [httpClient.breaker]
+    window  = "10s"
+    sleep   = "2000ms"
+    bucket  = 10
+    ratio   = 0.5
+    request = 100

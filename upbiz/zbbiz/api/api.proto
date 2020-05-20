@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package up.service.v1;
+
+option go_package = "api";
+
+service Up {
+  rpc CheckRole(CheckUpReq) returns (CheckUpResp);
+}
+
+message CheckUpReq {
+  int32 Role = 1;
+}
+
+message CheckUpResp {
+  bool Yes = 1;
+}
